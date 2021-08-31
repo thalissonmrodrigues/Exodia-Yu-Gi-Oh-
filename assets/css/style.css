@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.up{
+    padding-top: 20px;
+}
+.up,
+.low{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    perspective: 900px; 
+}
+.card{
+    height: 281px;
+    width: 194px;
+    background-image: url(../img/card.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+.item{
+    transition: .5s all ease;
+    transform: rotateX(45deg) scale(0.7);
+    box-shadow: 0px 5px 40px rgb(211, 209, 209);
+}
+.item:hover{
+    cursor: pointer;
+    transition: .5s all ease;
+    transform: rotateX(0deg) scale(1);
+    box-shadow: none;
+}
+#leftHand:checked~.up>.card:nth-child(1){
+    transform: rotateY(180deg) scaleX(-1);
+    background-image: url(../img/leftHand.png);
+}
+#head:checked~.up>.card:nth-child(2){
+    transform: rotateY(180deg) scaleX(-1);
+    background-image: url(../img/head.png);
+}
+#rightHand:checked~.up>.card:nth-child(3){
+    transform: rotateY(180deg) scaleX(-1);
+    background-image: url(../img/rightHand.png);
+}
+#leftLeg:checked~.low>.card:nth-child(1){
+    transform: rotateY(180deg) scaleX(-1);
+    background-image: url(../img/leftLeg.png);
+}
+#rightLeg:checked~.low>.card:nth-child(2){
+    transform: rotateY(180deg) scaleX(-1);
+    background-image: url(../img/rightLeg.png);
+}
+label {
+    display: block;
+    width: 194px;
+    height: 281px;
+}
+input[type="checkbox"]{
+    display: none;
+}
+
